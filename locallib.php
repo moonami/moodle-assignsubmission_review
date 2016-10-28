@@ -1113,7 +1113,7 @@ class assign_submission_review extends assign_submission_plugin {
 	if ((strlen(strip_tags($post->message)) > $CFG->forum_longpost)) {
 	  // Print shortened version
 	  $outcode .= '<div id="Post-' . $post->id . '">';
-	  $outcode .= format_text(forum_shorten_post($post->message), $post->format, $options);
+	  $outcode .= format_text(shorten_text($post->message, $CFG->forum_shortpost), $post->format, $options);
 	  $numwords = count_words(strip_tags($post->message));
 	  $outcode .= '<div class="posting"><a href="#" onclick="$(\'#Post-' . $post->id . '\').hide(); $(\'#Post2-' . $post->id . '\').show(); return false;" >';
 	  $outcode .= get_string('readtherest', 'forum') .
