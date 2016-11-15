@@ -473,7 +473,7 @@ class assign_submission_review extends assign_submission_plugin {
 	  $Atypedef = $review_instance->activitytype;
 	}
       
-      $PAGE->requires->js('/lib/jquery/jquery-1.4.2.min.js');
+      $PAGE->requires->jquery();
       
       $mform->addElement('html', '     
         <script>
@@ -1192,7 +1192,9 @@ class assign_submission_review extends assign_submission_plugin {
       if (!$user = $DB->get_record('user', array('id'=>$userid))) {
 	print_error('No such user!');
       }
-      $PAGE->requires->js('/lib/jquery/jquery-1.4.2.min.js');      
+
+      $PAGE->requires->jquery();
+
       $result .= "\n<!-- Begin forum submission view -->\n" .
 	'<style>' .
 	'	.PostTitle{font-weight:bold;}' .
